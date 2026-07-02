@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyCrawler — Tarieven</title>
+  <meta name="description" content="Doordacht prijsmodel dat meeschaalt met uw gebouw. Bereken direct de optimale vlootgrootte en kostprijs." />
+  <link rel="icon" type="image/png" href="black_robot_logo_transparent.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="black_robot_logo_transparent.png" alt="SkyCrawler logo">
+        <span>SkyCrawler</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="techniek.html"><span class="t" data-nl="Techniek" data-en="Technology">Techniek</span></a></li>
+        <li><a href="tarieven.html"><span class="t" data-nl="Tarieven" data-en="Pricing">Tarieven</span></a></li>
+        <li><a href="businessplan.html"><span class="t" data-nl="Over Ons" data-en="About Us">Over Ons</span></a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a class="nav-cta" href="tarieven.html#calculator"><span class="t" data-nl="Bereken offerte" data-en="Get a quote">Bereken offerte</span></a>
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="nl">NL</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="techniek.html"><span class="t" data-nl="Techniek" data-en="Technology">Techniek</span></a>
+    <a href="tarieven.html"><span class="t" data-nl="Tarieven" data-en="Pricing">Tarieven</span></a>
+    <a href="businessplan.html"><span class="t" data-nl="Over Ons" data-en="About Us">Over Ons</span></a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" style="padding-bottom:0;">
+    <div class="wrap">
+      <p class="eyebrow reveal"><span class="t" data-nl="Prijsmodel" data-en="Pricing model">Prijsmodel</span></p>
+      <h1 class="display reveal">
+        <span class="t" data-nl="Doordachte prijzen," data-en="Thoughtful pricing,">Doordachte prijzen,</span><br>
+        <span class="t" data-nl="gesteund door analyse." data-en="backed by analysis.">gesteund door analyse.</span>
+      </h1>
+      <p class="lede reveal">
+        <span class="t"
+          data-nl="Het prijsmodel schaalt mee met uw behoeften. Pas de parameters aan om de optimale vlootgrootte en koststructuur te berekenen. Minimale afname: 4 robots per project."
+          data-en="The pricing model scales with your needs. Adjust the parameters to calculate the optimal fleet size and cost structure. Minimum order: 4 robots per project.">
+          Het prijsmodel schaalt mee met uw behoeften. Pas de parameters aan om de optimale vlootgrootte en koststructuur te berekenen. Minimale afname: 4 robots per project.
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ CALCULATOR ══ -->
+  <section class="section" id="calculator">
+    <div class="wrap">
+      <div class="calc-grid">
+        <div class="calc-panel reveal">
+          <p class="panel-title"><span class="t" data-nl="Gebouwparameters" data-en="Building parameters">Gebouwparameters</span></p>
+
+          <div class="field-slider">
+            <label><span class="t" data-nl="Totale geveloppervlakte (glas)" data-en="Total façade area (glass)">Totale geveloppervlakte (glas)</span> <output id="oppLabel">5.000 m²</output></label>
+            <input type="range" id="opp" min="1000" max="50000" step="500" value="5000">
+          </div>
+
+          <div class="field-slider">
+            <label><span class="t" data-nl="Gewenste snelheid (dagen / beurt)" data-en="Desired speed (days / cycle)">Gewenste snelheid (dagen / beurt)</span> <output id="snelLabel">14 dagen</output></label>
+            <input type="range" id="snel" min="3" max="60" step="1" value="14">
+          </div>
+
+          <div class="field-slider" style="margin-bottom:0.5rem;">
+            <label><span class="t" data-nl="Rondes per jaar" data-en="Cycles per year">Rondes per jaar</span> <output id="rondesLabel">4×</output></label>
+            <input type="range" id="rondes" min="1" max="52" step="1" value="4">
+          </div>
+        </div>
+
+        <div class="output-panel reveal" style="transition-delay:.08s">
+          <p class="panel-title"><span class="t" data-nl="Infrastructuur & kosten" data-en="Infrastructure & costs">Infrastructuur & kosten</span></p>
+          <div class="output-row">
+            <span class="label"><span class="t" data-nl="Robots (min. 4)" data-en="Robots (min. 4)">Robots (min. 4)</span></span>
+            <span class="value" id="outRobots">4</span>
+          </div>
+          <div class="output-row">
+            <span class="label"><span class="t" data-nl="Basisstations" data-en="Base stations">Basisstations</span></span>
+            <span class="value" id="outStations">2</span>
+          </div>
+          <div class="output-row">
+            <span class="label"><span class="t" data-nl="Reinigingsbeurten / jaar" data-en="Cleaning cycles / year">Reinigingsbeurten / jaar</span></span>
+            <span class="value" id="outRondes">4</span>
+          </div>
+          <div class="output-total">
+            <p class="label"><span class="t" data-nl="Eenmalige installatie (CapEx)" data-en="One-time installation (CapEx)">Eenmalige installatie (CapEx)</span></p>
+            <p class="capex" id="outCapex">€ —</p>
+            <p class="opex" id="outOpex">€ — / maand</p>
+          </div>
+          <a href="contact.html" class="btn"><span class="t" data-nl="Vraag maatwerkofferte aan" data-en="Request a custom quote">Vraag maatwerkofferte aan</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow muted reveal"><span class="t" data-nl="Veelgestelde vragen" data-en="Frequently asked questions">Veelgestelde vragen</span></p>
+      <h2 class="title-lg reveal" style="margin-bottom:3rem;">
+        <span class="t" data-nl="Alles wat u wil weten over SkyCrawler." data-en="Everything you want to know about SkyCrawler.">Alles wat u wil weten over SkyCrawler.</span>
+      </h2>
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-text"><span class="t" data-nl="Hoe hecht SkyCrawler zich vast aan een gebouw?" data-en="How does SkyCrawler attach to a building?">Hoe hecht SkyCrawler zich vast aan een gebouw?</span></span>
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </button>
+          <div class="faq-answer-wrap"><p class="faq-answer"><span class="t"
+            data-nl="SkyCrawler gebruikt een systeem van industriële vacuümzuignappen die een constante negatieve druk op de gevelplaat houden. Elke zuignap werkt onafhankelijk, zodat het systeem op koers blijft — ook bij kleine oneffenheden in de gevel of tijdelijke drukvariaties door wind."
+            data-en="SkyCrawler uses a system of industrial vacuum suction cups that maintain constant negative pressure against the facade panel. Each cup operates independently, keeping the system on track even across minor surface irregularities or temporary pressure variations caused by wind.">SkyCrawler gebruikt een systeem van industriële vacuümzuignappen die een constante negatieve druk op de gevelplaat houden. Elke zuignap werkt onafhankelijk, zodat het systeem op koers blijft — ook bij kleine oneffenheden in de gevel of tijdelijke drukvariaties door wind.</span></p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-text"><span class="t" data-nl="Op welk type gevels kan SkyCrawler werken?" data-en="What types of facades can SkyCrawler work on?">Op welk type gevels kan SkyCrawler werken?</span></span>
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </button>
+          <div class="faq-answer-wrap"><p class="faq-answer"><span class="t"
+            data-nl="Het systeem is ontworpen voor vlakke en licht gebogen glazen gevels — het meest voorkomende type bij moderne hoogbouw en kantoorgebouwen. Samengestelde materialen zoals gecoat aluminium of geëmailleerd glas zijn eveneens compatibel. Sterk geprofileerde of poreuze gevelmaterialen zijn momenteel buiten bereik."
+            data-en="The system is designed for flat and mildly curved glass facades — the most common type on modern high-rises and office buildings. Composite materials such as coated aluminium or enamelled glass are also compatible. Heavily profiled or porous facade materials are currently outside scope.">Het systeem is ontworpen voor vlakke en licht gebogen glazen gevels — het meest voorkomende type bij moderne hoogbouw en kantoorgebouwen. Samengestelde materialen zoals gecoat aluminium of geëmailleerd glas zijn eveneens compatibel. Sterk geprofileerde of poreuze gevelmaterialen zijn momenteel buiten bereik.</span></p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-text"><span class="t" data-nl="Wat als de zuignap het begeeft op hoogte?" data-en="What happens if a suction cup fails at height?">Wat als de zuignap het begeeft op hoogte?</span></span>
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </button>
+          <div class="faq-answer-wrap"><p class="faq-answer"><span class="t"
+            data-nl="SkyCrawler werkt met meerdere redundante zuignappen tegelijk. Een drukdaling in één module triggert onmiddellijk een compensatieprotocol: het systeem vergrendelt zijn positie en geeft een alarm via de beheerinterface. Bovendien is het platform verbonden met een fysieke veiligheidskabel die een vrije val in alle omstandigheden verhindert."
+            data-en="SkyCrawler operates with multiple redundant suction cups simultaneously. A pressure drop in one module immediately triggers a compensation protocol: the system locks its position and sends an alert via the management interface. Additionally, the platform is connected to a physical safety tether that prevents free fall under all circumstances.">SkyCrawler werkt met meerdere redundante zuignappen tegelijk. Een drukdaling in één module triggert onmiddellijk een compensatieprotocol: het systeem vergrendelt zijn positie en geeft een alarm via de beheerinterface. Bovendien is het platform verbonden met een fysieke veiligheidskabel die een vrije val in alle omstandigheden verhindert.</span></p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-text"><span class="t" data-nl="Kan SkyCrawler werken bij wind of regen?" data-en="Can SkyCrawler operate in wind or rain?">Kan SkyCrawler werken bij wind of regen?</span></span>
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </button>
+          <div class="faq-answer-wrap"><p class="faq-answer"><span class="t"
+            data-nl="SkyCrawler is ontworpen om te opereren bij windsnelheden tot 40 km/u en bij lichte neerslag. De AI-module past het reinigingsschema automatisch aan op basis van weerdata: bij ongunstige condities wordt de taak gepauzeerd en hernomen zodra het veilig is. Nachtwerk — wanneer wind doorgaans lager is — wordt actief benut."
+            data-en="SkyCrawler is designed to operate in wind speeds up to 40 km/h and in light precipitation. The AI module automatically adjusts the cleaning schedule based on weather data: when conditions are unfavourable, the task is paused and resumed as soon as it is safe to do so. Night operations — when wind is typically lower — are actively leveraged.">SkyCrawler is ontworpen om te opereren bij windsnelheden tot 40 km/u en bij lichte neerslag. De AI-module past het reinigingsschema automatisch aan op basis van weerdata: bij ongunstige condities wordt de taak gepauzeerd en hernomen zodra het veilig is. Nachtwerk — wanneer wind doorgaans lager is — wordt actief benut.</span></p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-text"><span class="t" data-nl="Zijn er nog mensen nodig tijdens de reiniging?" data-en="Are workers still needed during a cleaning run?">Zijn er nog mensen nodig tijdens de reiniging?</span></span>
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </button>
+          <div class="faq-answer-wrap"><p class="faq-answer"><span class="t"
+            data-nl="Nee. Zodra SkyCrawler is gemonteerd en de reinigingsroute is ingesteld, verloopt het proces volledig autonoom. Een SkyCrawler-technieker staat op afstand beschikbaar voor monitoring en interventie. Er zijn geen werkers op hoogte vereist — wat zowel de veiligheidsrisico's als de personeelskosten drastisch vermindert."
+            data-en="No. Once SkyCrawler is mounted and the cleaning route is configured, the process runs fully autonomously. A SkyCrawler technician is available remotely for monitoring and intervention. No workers at height are required — which drastically reduces both safety risks and labour costs.">Nee. Zodra SkyCrawler is gemonteerd en de reinigingsroute is ingesteld, verloopt het proces volledig autonoom. Een SkyCrawler-technieker staat op afstand beschikbaar voor monitoring en interventie. Er zijn geen werkers op hoogte vereist — wat zowel de veiligheidsrisico's als de personeelskosten drastisch vermindert.</span></p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-text"><span class="t" data-nl="Hoe navigeert SkyCrawler over de gevel?" data-en="How does SkyCrawler navigate across the facade?">Hoe navigeert SkyCrawler over de gevel?</span></span>
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </button>
+          <div class="faq-answer-wrap"><p class="faq-answer"><span class="t"
+            data-nl="De navigatie combineert LiDAR-puntenwolken, inertiale sensoren en een digitale gebouwplattegrond die vooraf wordt ingeladen. De AI vergelijkt continu de verwachte met de werkelijke positie en corrigeert kleine afwijkingen in realtime. Gevelelementen zoals raamkaders en ventilatieopeningen worden automatisch herkend en omzeild."
+            data-en="Navigation combines LiDAR point clouds, inertial sensors and a digital building map loaded in advance. The AI continuously compares expected versus actual position and corrects small deviations in real time. Facade elements such as window frames and ventilation openings are automatically identified and avoided.">De navigatie combineert LiDAR-puntenwolken, inertiale sensoren en een digitale gebouwplattegrond die vooraf wordt ingeladen. De AI vergelijkt continu de verwachte met de werkelijke positie en corrigeert kleine afwijkingen in realtime. Gevelelementen zoals raamkaders en ventilatieopeningen worden automatisch herkend en omzeild.</span></p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-text"><span class="t" data-nl="Is de reinigingsmethode milieuvriendelijk?" data-en="Is the cleaning method environmentally friendly?">Is de reinigingsmethode milieuvriendelijk?</span></span>
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </button>
+          <div class="faq-answer-wrap"><p class="faq-answer"><span class="t"
+            data-nl="SkyCrawler werkt met gefilterd regenwater en sterk gereduceerde zeephoeveelheden, gecombineerd met microvezelborstels die vuil mechanisch losmaken. Het waterverbruik ligt 70–80% lager dan bij traditionele gevelreiniging. Er worden geen agressieve chemicaliën gebruikt en afvalwater wordt intern gefilterd voor hergebruik."
+            data-en="SkyCrawler operates with filtered rainwater and significantly reduced soap quantities, combined with microfibre brushes that loosen dirt mechanically. Water consumption is 70–80% lower than traditional facade cleaning. No aggressive chemicals are used and wastewater is internally filtered for reuse.">SkyCrawler werkt met gefilterd regenwater en sterk gereduceerde zeephoeveelheden, gecombineerd met microvezelborstels die vuil mechanisch losmaken. Het waterverbruik ligt 70–80% lager dan bij traditionele gevelreiniging. Er worden geen agressieve chemicaliën gebruikt en afvalwater wordt intern gefilterd voor hergebruik.</span></p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-q-text"><span class="t" data-nl="Hoe werkt de samenwerking in de praktijk?" data-en="How does the partnership work in practice?">Hoe werkt de samenwerking in de praktijk?</span></span>
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="0" x2="5" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="0" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </button>
+          <div class="faq-answer-wrap"><p class="faq-answer"><span class="t"
+            data-nl="We starten met een gebouwscan en een vrijblijvend pilotvoorstel op maat. Na akkoord zorgt ons team voor installatie, configuratie en de eerste reinigingsrun — inclusief een gedetailleerd rapport. Daarna draait SkyCrawler op een vaste planning die u via ons dashboard kunt volgen en aanpassen."
+            data-en="We begin with a building scan and a no-obligation tailored pilot proposal. Once agreed, our team handles installation, configuration and the first cleaning run — including a detailed report. After that, SkyCrawler runs on a fixed schedule that you can monitor and adjust via our dashboard.">We starten met een gebouwscan en een vrijblijvend pilotvoorstel op maat. Na akkoord zorgt ons team voor installatie, configuratie en de eerste reinigingsrun — inclusief een gedetailleerd rapport. Daarna draait SkyCrawler op een vaste planning die u via ons dashboard kunt volgen en aanpassen.</span></p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer></footer>
+  <script src="main.js"></script>
+  <script>
+    /* ── PRICING CALCULATOR ── */
+    (function () {
+      var opp = document.getElementById('opp');
+      var snel = document.getElementById('snel');
+      var rondes = document.getElementById('rondes');
+      if (!opp) return;
+
+      function lang() {
+        try { return localStorage.getItem('sc-lang') || 'nl'; } catch (e) { return 'nl'; }
+      }
+      function fmt(n) { return '€ ' + Math.round(n).toLocaleString('nl-BE'); }
+
+      function calc() {
+        var o = +opp.value, s = +snel.value, r = +rondes.value;
+        var nl = lang() === 'nl';
+        document.getElementById('oppLabel').textContent = o.toLocaleString('nl-BE') + ' m²';
+        document.getElementById('snelLabel').textContent = s + (nl ? ' dagen' : ' days');
+        document.getElementById('rondesLabel').textContent = r + '×';
+        var robots = Math.max(4, Math.ceil(o / (50 * 8 * s)));
+        var stations = Math.max(2, Math.ceil(robots / 2));
+        document.getElementById('outRobots').textContent = robots;
+        document.getElementById('outStations').textContent = stations;
+        document.getElementById('outRondes').textContent = r;
+        var capex = robots * 85000 + stations * 22000;
+        var opex = robots * 1200 + stations * 300 + (o * r * 0.04) / 12;
+        document.getElementById('outCapex').textContent = fmt(capex);
+        document.getElementById('outOpex').textContent = fmt(opex) + (nl ? ' / maand' : ' / month');
+      }
+      [opp, snel, rondes].forEach(function (el) { el.addEventListener('input', calc); });
+      document.addEventListener('sc:lang', calc);
+      calc();
+    })();
+  </script>
+</body>
+</html>
