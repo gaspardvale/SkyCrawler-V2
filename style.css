@@ -195,6 +195,23 @@ a { color: inherit; }
   padding: clamp(1.8rem, 3vw, 2.6rem);
 }
 
+/* ── WATERCOLOR HERO (homepage) ── */
+.hero-full {
+  position: relative;
+  min-height: min(92vh, 860px);
+  display: flex; flex-direction: column; justify-content: center;
+  background: #fff url('ChatGPT%20Image%202%20jul%202026%2C%2019_45_48.png') center top / cover no-repeat;
+}
+.hero-full::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 26%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  pointer-events: none;
+}
+.hero-full > .wrap { position: relative; z-index: 2; }
+@media (max-width: 600px) {
+  .hero-full { min-height: 78vh; }
+}
+
 /* ── HERO (shared) ── */
 .hero { padding: calc(var(--nav-h) + clamp(4rem, 9vw, 7.5rem)) 0 clamp(3rem, 6vw, 5rem); text-align: center; }
 .hero .display { max-width: 820px; margin: 0 auto 1.4rem; }
