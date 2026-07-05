@@ -66,20 +66,23 @@
         return e;
       }
 
-      /* [x, width, topY] — lower topY = taller building */
+      /* [x, width, topY] — lower topY = taller building.
+         Sparse, tall silhouettes with generous gaps — minimal & branded. */
       var BLDGS = [
-        [0, 42, 92], [50, 60, 34], [118, 38, 115], [164, 54, 52], [226, 32, 140],
-        [266, 66, 25], [340, 44, 88], [392, 30, 158], [430, 56, 58], [494, 36, 108],
-        [538, 74, 16], [620, 42, 94], [670, 50, 62], [728, 28, 148], [764, 60, 44],
-        [832, 40, 90], [880, 68, 26], [956, 34, 120], [998, 54, 60], [1060, 42, 95],
-        [1110, 64, 30], [1182, 36, 125], [1226, 56, 52], [1290, 38, 88], [1336, 62, 40],
-        [1406, 34, 82]
+        [70, 92, 118],
+        [200, 68, 210],
+        [408, 112, 58],
+        [552, 78, 178],
+        [764, 132, 24],
+        [1006, 88, 148],
+        [1128, 76, 86],
+        [1302, 98, 196]
       ];
 
-      BLDGS.forEach(function (b, i) {
+      BLDGS.forEach(function (b) {
         var x = b[0], w = b[1], top = b[2];
         var bH = GY - top;
-        var s = Math.max(4, Math.floor(w * 0.13));
+        var s = Math.max(5, Math.floor(w * 0.13));
         var h1 = Math.max(12, Math.floor(bH * 0.09));
         var h2 = Math.max(8, Math.floor(bH * 0.06));
         var pts = [
@@ -91,20 +94,6 @@
           (x + s) + ',' + (top + h1 + h2), x + ',' + (top + h1 + h2)
         ].join(' ');
         el('polygon', { points: pts, fill: BLDG_C });
-
-        var h = GY - top - h1 - h2;
-        if (h > 0) el('rect', { x: x + w - 2, y: top + h1 + h2, width: 2, height: h, fill: '#0f1f38', opacity: 0.45 });
-
-        var cx = x + w * 0.5;
-        if (top < 45) {
-          var antH = 30 + (i % 4) * 10;
-          el('rect', { x: cx - 1.5, y: top - antH, width: 3, height: antH, fill: BLDG_C });
-          el('rect', { x: cx - 0.8, y: top - antH - 10, width: 1.6, height: 10, fill: '#243d6a' });
-          el('rect', { x: cx - 7, y: top - antH + 5, width: 14, height: 1.5, fill: '#243d6a' });
-        } else if (top < 70) {
-          var spH = 22 + (i % 3) * 8;
-          el('rect', { x: cx - 2, y: top - spH, width: 4, height: spH, fill: BLDG_C });
-        }
       });
 
       footer.insertBefore(svg, footer.firstChild);
