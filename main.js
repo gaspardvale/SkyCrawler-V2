@@ -52,7 +52,12 @@
   /* ─── NAV: scrolled state ──────────────────────────────────────── */
   var nav = document.querySelector('.nav');
   if (nav) {
-    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+    var heroFull = document.querySelector('.hero-full');
+    var onScroll = function () {
+      var overHero = heroFull && heroFull.getBoundingClientRect().bottom > 52;
+      nav.classList.toggle('nav-clear', !!overHero);
+      nav.classList.toggle('scrolled', !overHero && window.scrollY > 8);
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }

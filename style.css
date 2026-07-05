@@ -54,6 +54,11 @@ a { color: inherit; }
   transition: border-color 0.3s ease, background 0.3s ease;
 }
 .nav.scrolled { border-bottom-color: var(--hairline); background: rgba(255, 255, 255, 0.85); }
+.nav.nav-clear {
+  background: transparent;
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+  border-bottom-color: transparent;
+}
 .nav-inner {
   max-width: 1040px; margin: 0 auto; height: 100%;
   padding: 0 max(22px, 4vw);
