@@ -450,20 +450,10 @@ input[type="range"]::-moz-range-thumb {
 .footer { background: var(--panel); margin-top: clamp(4rem, 8vw, 7rem); }
 
 /* City skyline variant (homepage) */
-.footer.footer-city {
-  background-color: #dde8f5;
-  background-image:
-    linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0) 22%),
-    url('Footer%20Image.png');
-  background-position: top center, center bottom;
-  background-size: 100% 100%, cover;
-  background-repeat: no-repeat, no-repeat;
-  padding-bottom: 2rem;
-}
+.footer.footer-city { background: #fff; padding-bottom: 2rem; }
 .footer-city .city-svg { display: block; width: 100%; vertical-align: bottom; }
 .footer-city .footer-inner {
-  background: rgba(255, 255, 255, 0.66);
-  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  background: var(--panel);
   border-radius: 24px;
   position: relative; z-index: 2;
   margin: -24px auto 0;

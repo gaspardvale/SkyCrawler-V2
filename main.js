@@ -66,21 +66,9 @@
         return e;
       }
 
-      /* [x, width, topY] — lower topY = taller building.
-         Sparse, tall silhouettes with generous gaps — minimal & branded. */
-      var BLDGS = [
-        [70, 92, 118],
-        [200, 68, 210],
-        [408, 112, 58],
-        [552, 78, 178],
-        [764, 132, 24],
-        [1006, 88, 148],
-        [1128, 76, 86],
-        [1302, 98, 196]
-      ];
-
-      BLDGS.forEach(function (b) {
-        var x = b[0], w = b[1], top = b[2];
+      /* Two-layer skyline: light back row peeking above a navy front row —
+         minimal depth on white. [x, width, topY]; lower topY = taller. */
+      function drawBldg(x, w, top, color) {
         var bH = GY - top;
         var s = Math.max(5, Math.floor(w * 0.13));
         var h1 = Math.max(12, Math.floor(bH * 0.09));
@@ -93,8 +81,22 @@
           (x + 2 * s) + ',' + (top + h2), (x + s) + ',' + (top + h2),
           (x + s) + ',' + (top + h1 + h2), x + ',' + (top + h1 + h2)
         ].join(' ');
-        el('polygon', { points: pts, fill: BLDG_C });
-      });
+        el('polygon', { points: pts, fill: color });
+      }
+
+      var BACK = [
+        [40, 76, 138], [166, 92, 82], [318, 64, 168], [452, 84, 112],
+        [618, 104, 62], [800, 72, 150], [922, 94, 98], [1084, 72, 160],
+        [1204, 102, 88], [1356, 82, 130]
+      ];
+      var FRONT = [
+        [96, 84, 196], [232, 62, 248], [372, 96, 142], [524, 72, 216],
+        [682, 88, 158], [844, 112, 118], [1014, 78, 228], [1148, 92, 172],
+        [1286, 66, 254], [1382, 58, 206]
+      ];
+
+      BACK.forEach(function (b) { drawBldg(b[0], b[1], b[2], '#c8d6ea'); });
+      FRONT.forEach(function (b) { drawBldg(b[0], b[1], b[2], BLDG_C); });
 
       footer.insertBefore(svg, footer.firstChild);
     }
