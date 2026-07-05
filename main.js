@@ -66,8 +66,6 @@
         return e;
       }
 
-      el('rect', { x: 0, y: 0, width: VW, height: VH, fill: '#dde8f5' });
-
       /* [x, width, topY] — lower topY = taller building */
       var BLDGS = [
         [0, 42, 92], [50, 60, 34], [118, 38, 115], [164, 54, 52], [226, 32, 140],
@@ -109,7 +107,6 @@
         }
       });
 
-      el('rect', { x: 0, y: GY, width: VW, height: VH - GY, fill: '#dde8f5' });
       footer.insertBefore(svg, footer.firstChild);
     }
   }
