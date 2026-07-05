@@ -52,10 +52,10 @@
     if (document.querySelector('.hero-full')) {
       footer.classList.add('footer-city');
       var NS = 'http://www.w3.org/2000/svg';
-      var VW = 1440, VH = 370, GY = 358, BLDG_C = '#1a2f52';
+      var VW = 1440, VH = 560, GY = 560, BLDG_C = '#1a2f52';
       var svg = document.createElementNS(NS, 'svg');
       svg.setAttribute('viewBox', '0 0 ' + VW + ' ' + VH);
-      svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+      svg.setAttribute('preserveAspectRatio', 'xMidYMax slice');
       svg.setAttribute('aria-hidden', 'true');
       svg.setAttribute('class', 'city-svg');
 
@@ -85,14 +85,14 @@
       }
 
       var BACK = [
-        [40, 76, 138], [166, 92, 82], [318, 64, 168], [452, 84, 112],
-        [618, 104, 62], [800, 72, 150], [922, 94, 98], [1084, 72, 160],
-        [1204, 102, 88], [1356, 82, 130]
+        [0, 110, 92], [150, 90, 28], [280, 120, 122], [440, 100, 56],
+        [580, 130, 14], [750, 95, 100], [880, 120, 40], [1040, 100, 132],
+        [1180, 130, 24], [1350, 90, 76]
       ];
       var FRONT = [
-        [96, 84, 196], [232, 62, 248], [372, 96, 142], [524, 72, 216],
-        [682, 88, 158], [844, 112, 118], [1014, 78, 228], [1148, 92, 172],
-        [1286, 66, 254], [1382, 58, 206]
+        [60, 95, 182], [195, 75, 242], [330, 110, 152], [490, 85, 212],
+        [640, 100, 122], [790, 120, 192], [950, 90, 92], [1090, 110, 232],
+        [1240, 95, 162], [1370, 70, 202]
       ];
 
       BACK.forEach(function (b) { drawBldg(b[0], b[1], b[2], '#c8d6ea'); });
