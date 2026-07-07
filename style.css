@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   SkyCrawler V2 — Design System
+   SkyCrawler V2 - Design System
    Light, minimal, Apple-inspired
    ═══════════════════════════════════════════ */
 
@@ -449,7 +449,7 @@ input[type="range"]::-moz-range-thumb {
 /* ── FOOTER ── */
 .footer { background: var(--panel); margin-top: clamp(4rem, 8vw, 7rem); }
 
-/* City skyline variant (homepage) — full-bleed skyline backdrop, frosted panel on top */
+/* City skyline variant (homepage) - full-bleed skyline backdrop, frosted panel on top */
 .footer.footer-city {
   background: #fff;
   position: relative; overflow: hidden;

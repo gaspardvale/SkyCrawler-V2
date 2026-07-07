@@ -1,4 +1,4 @@
-/* SkyCrawler V2 — shared behaviour: nav, footer, language, reveal */
+/* SkyCrawler V2 - shared behaviour: nav, footer, language, reveal */
 (function () {
   'use strict';
 
@@ -43,12 +43,12 @@
           '<span><span class="t" data-nl="Mogelijk gemaakt door" data-en="Powered by">Mogelijk gemaakt door</span> <strong>VALE</strong></span>' +
         '</a>' +
         '<div class="footer-btm">' +
-          '<span class="t" data-nl="© 2026 SkyCrawler — Alle rechten voorbehouden." data-en="© 2026 SkyCrawler — All rights reserved.">© 2026 SkyCrawler — Alle rechten voorbehouden.</span>' +
+          '<span class="t" data-nl="© 2026 SkyCrawler. Alle rechten voorbehouden." data-en="© 2026 SkyCrawler. All rights reserved.">© 2026 SkyCrawler. Alle rechten voorbehouden.</span>' +
           '<span class="t" data-nl="Gebouwd in Gent, België." data-en="Built in Ghent, Belgium.">Gebouwd in Gent, België.</span>' +
         '</div>' +
       '</div>';
 
-    /* ── City skyline above the footer — homepage only ── */
+    /* ── City skyline above the footer, homepage only ── */
     if (document.querySelector('.hero-full')) {
       footer.classList.add('footer-city');
       var NS = 'http://www.w3.org/2000/svg';
@@ -66,7 +66,7 @@
         return e;
       }
 
-      /* Two-layer skyline: light back row peeking above a navy front row —
+      /* Two-layer skyline: light back row peeking above a navy front row,
          minimal depth on white. [x, width, topY]; lower topY = taller. */
       function drawBldg(x, w, top, color) {
         var bH = GY - top;
