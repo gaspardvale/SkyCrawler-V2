@@ -16,16 +16,16 @@
           '<div>' +
             '<div class="footer-col-hd"><span class="t" data-nl="Verkennen" data-en="Explore">Verkennen</span></div>' +
             '<ul class="footer-links">' +
-              '<li><a href="index.html">Home</a></li>' +
-              '<li><a href="techniek.html"><span class="t" data-nl="Techniek" data-en="Technology">Techniek</span></a></li>' +
-              '<li><a href="tarieven.html"><span class="t" data-nl="Tarieven" data-en="Pricing">Tarieven</span></a></li>' +
+              '<li><a href="./">Home</a></li>' +
+              '<li><a href="techniek"><span class="t" data-nl="Techniek" data-en="Technology">Techniek</span></a></li>' +
+              '<li><a href="tarieven"><span class="t" data-nl="Tarieven" data-en="Pricing">Tarieven</span></a></li>' +
             '</ul>' +
           '</div>' +
           '<div>' +
             '<div class="footer-col-hd"><span class="t" data-nl="Bedrijf" data-en="Company">Bedrijf</span></div>' +
             '<ul class="footer-links">' +
-              '<li><a href="businessplan.html"><span class="t" data-nl="Over Ons" data-en="About Us">Over Ons</span></a></li>' +
-              '<li><a href="contact.html">Contact</a></li>' +
+              '<li><a href="businessplan"><span class="t" data-nl="Over Ons" data-en="About Us">Over Ons</span></a></li>' +
+              '<li><a href="contact">Contact</a></li>' +
             '</ul>' +
           '</div>' +
           '<div>' +
